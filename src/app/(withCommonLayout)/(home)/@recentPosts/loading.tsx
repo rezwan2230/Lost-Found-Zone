@@ -2,9 +2,7 @@
 import { Button } from "@heroui/button";
 import Link from "next/link";
 
-import { IPost } from "@/src/types";
 import Container from "@/src/components/UI/Container";
-import { Card } from "@heroui/card";
 import CardSkeleton from "@/src/components/UI/CardSkeleton";
 
 const RecentPosts = () => {
@@ -17,8 +15,8 @@ const RecentPosts = () => {
         </p>
       </div>
       <div className="my-8 grid justify-center gap-10 sm:grid-cols-1 md:grid-cols-4">
-        {[...Array(9)].map(() => (
-          <CardSkeleton/>
+        {[...Array(9)].map((index) => (
+          <CardSkeleton key={index}/>
         ))}
       </div>
       <div className="flex justify-center">

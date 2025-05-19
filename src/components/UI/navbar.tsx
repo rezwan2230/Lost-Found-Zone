@@ -16,6 +16,8 @@ import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/UI/theme-switch";
 import { Logo } from "@/src/components/icons";
 
+import NavbarDropdown from "./NavbarDropdown";
+
 export const Navbar = () => {
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
@@ -50,6 +52,12 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden sm:flex gap-2">
           <ThemeSwitch />
+        </NavbarItem>
+
+        <NavbarItem className="hidden sm:flex gap-2">
+          <div className="flex gap-3 items-center">
+           <NavbarDropdown/>
+          </div>
         </NavbarItem>
       </NavbarContent>
 

@@ -1,26 +1,28 @@
-import { Card as NextUiCard, CardHeader, CardFooter } from "@heroui/card";
+import { Card as NextUiCard } from "@heroui/card";
 import { Skeleton } from "@heroui/skeleton";
 
 const CardSkeleton = () => {
   return (
-    <Skeleton>
-      <NextUiCard
-        isFooterBlurred
-        className="w-[300px] h-[300px] col-span-12 sm:col-span-5 rounded-lg"
-      >
-        <CardHeader className="absolute z-10 top-1 flex justify-between ">
-          <h4 className="text-black font-medium text-2xl"></h4>
-          <p className="text-tiny text-white/60 uppercase font-bold text-center text-black"></p>
-        </CardHeader>
-
-        <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-          <div>
-            <p className="text-black text-tiny"></p>
-            <p className="text-black text-tiny"></p>
-          </div>
-        </CardFooter>
-      </NextUiCard>
-    </Skeleton>
+    <NextUiCard className="h-[300px] w-full rounded-3xl">
+      <Skeleton className="rounded-lg">
+        <div className="h-60 rounded-lg bg-default-300" />
+      </Skeleton>
+      <div className="flex items-center justify-between p-2">
+        <div className="w-3/4">
+          <Skeleton className="my-2 w-2/5 rounded-lg">
+            <div className="h-3 w-2/5 rounded-lg bg-default-200" />
+          </Skeleton>
+          <Skeleton className="w-3/5 rounded-lg">
+            <div className="h-3 w-3/5 rounded-lg bg-default-200" />
+          </Skeleton>
+        </div>
+        <div className="w-1/4">
+          <Skeleton className="my-2 w-full rounded-full">
+            <div className="h-8 w-full rounded-full bg-default-200" />
+          </Skeleton>
+        </div>
+      </div>
+    </NextUiCard>
   );
 };
 

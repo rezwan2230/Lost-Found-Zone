@@ -6,11 +6,8 @@ import { getRecentPost } from "@/src/services/RecentPost";
 import Container from "@/src/components/UI/Container";
 import { IPost } from "@/src/types";
 import Card from "@/src/components/UI/Card";
-import { delay } from "@/src/utils/delay";
-
 const RecentPosts = async () => {
-    await delay(2000)
-  const {data: posts} = await getRecentPost()
+  const { data: posts } = await getRecentPost();
 
   return (
     <Container>
@@ -21,8 +18,8 @@ const RecentPosts = async () => {
         </p>
       </div>
       <div className="my-8 grid justify-center gap-10 sm:grid-cols-1 md:grid-cols-4">
-        {posts.map((post : IPost) => (
-          <Card key={post._id} post={post}/>
+        {posts.map((post: IPost) => (
+          <Card key={post._id} post={post} />
         ))}
       </div>
       <div className="flex justify-center">

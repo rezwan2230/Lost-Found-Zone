@@ -4,7 +4,7 @@ import { SearchIcon } from "../../icons";
 
 const Landing = () => {
   return (
-    <div className="h-[calc(100vh-64px)] bg-[url('/glasses.jpg')] bg-cover bg-center">
+    <div className="h-[calc(100vh-64px)] bg-[url('/lost.jpg')] bg-cover bg-center">
       <div className="pt-32 max-w-xl flex-1 mx-auto">
         <form className="flex-1">
           <Input
