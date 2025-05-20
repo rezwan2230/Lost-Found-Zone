@@ -258,6 +258,20 @@
     "@react-types/form" "3.7.11"
     "@react-types/shared" "3.29.0"
 
+"@heroui/form@^2.1.18":
+  version "2.1.18"
+  resolved "https://registry.yarnpkg.com/@heroui/form/-/form-2.1.18.tgz#88de5605160d0bd831568f35909729fe24b41936"
+  integrity sha512-cBlliX6uiIUHDMF/bf5u1JhaA1+ddJHfmDPGfdl25c0mSWbyJqWJ0f1N2KZfrOf8kBkXdWCDXgK5sr3h9n22xg==
+  dependencies:
+    "@heroui/react-utils" "2.1.10"
+    "@heroui/shared-utils" "2.1.9"
+    "@heroui/system" "2.4.15"
+    "@heroui/theme" "2.4.15"
+    "@react-aria/utils" "3.28.2"
+    "@react-stately/form" "3.1.3"
+    "@react-types/form" "3.7.11"
+    "@react-types/shared" "3.29.0"
+
 "@heroui/framer-utils@2.1.15":
   version "2.1.15"
   resolved "https://registry.npmjs.org/@heroui/framer-utils/-/framer-utils-2.1.15.tgz"
@@ -3608,10 +3622,10 @@ react-dom@18.3.1:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
 
-react-hook-form@^7.56.2:
-  version "7.56.2"
-  resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.56.2.tgz"
-  integrity sha512-vpfuHuQMF/L6GpuQ4c3ZDo+pRYxIi40gQqsCmmfUBwm+oqvBhKhwghCuj2o00YCgSfU6bR9KC/xnQGWm3Gr08A==
+react-hook-form@^7.56.4:
+  version "7.56.4"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.56.4.tgz#273f55d43fb24ace3e2b9409d0d5326306d7905e"
+  integrity sha512-Rob7Ftz2vyZ/ZGsQZPaRdIefkgOSrQSPXfqBdvOPwJfoGnjwRJUs7EM7Kc1mcoDv3NOtqBzPGbcMB8CGn9CKgw==
 
 react-is@^16.13.1:
   version "16.13.1"

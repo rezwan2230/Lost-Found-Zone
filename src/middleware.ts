@@ -14,12 +14,12 @@ const roleBaseRoutes = {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  const user = {
-      name : "rezwan",
-      token : "sgfsg sgssg s",
-      role : "ADMIN"
-  }
-//   const user = undefined;
+  // const user = {
+  //     name : "rezwan",
+  //     token : "sgfsg sgssg s",
+  //     role : "ADMIN"
+  // }
+  const user = undefined;
 
   if (!user) {
     if (authRoutes.includes(pathname)) {
@@ -40,3 +40,6 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: ["/profile", "/admin", "/login", "/register"],
 };
+
+
+

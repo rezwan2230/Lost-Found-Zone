@@ -134,7 +134,7 @@ export default defineConfig([globalIgnores([
             reservedFirst: true,
         }],
 
-        "padding-line-between-statements": ["warn", {
+        "padding-line-between-statements": ["off", {
             blankLine: "always",
             prev: "*",
             next: "return",
