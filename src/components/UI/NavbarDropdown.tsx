@@ -20,7 +20,10 @@ const NavbarDropdown = () => {
         <Avatar name="Rezwan" />
       </DropdownTrigger>
       <DropdownMenu aria-label="Static Actions">
-        <DropdownItem onClick={() => handleRouter("/profile")} key="new">
+        <DropdownItem onClick={() => handleRouter("/admin")} key="admin">
+          Admin
+        </DropdownItem>
+        <DropdownItem onClick={() => handleRouter("/profile")} key="profile">
           Profile
         </DropdownItem>
         <DropdownItem
