@@ -4,10 +4,10 @@ import { useFormContext } from "react-hook-form";
 interface IProps {
   variant?: "flat" | "bordered" | "faded" | "underlined";
   size?: "sm" | "md" | "lg";
-  type? : string
+  type?: string;
   required?: boolean;
-  label : string;
-  name : string;
+  label: string;
+  name: string;
 }
 
 const FXInput = ({
@@ -16,10 +16,21 @@ const FXInput = ({
   required = false,
   type = "text",
   label,
-  name
+  name,
 }: IProps) => {
-    const {register} = useFormContext()
-  return <Input {...register(name)} variant={variant} size={size} required={required} type={type} label={label} />;
+  const { register } = useFormContext();
+  return (
+    <Input
+      {...register(name)}
+      errorMessage={"Test"}
+      isInvalid={true}
+      variant={variant}
+      size={size}
+      required={required}
+      type={type}
+      label={label}
+    />
+  );
 };
 
 export default FXInput;
