@@ -104,7 +104,7 @@ export default defineConfig([globalIgnores([
             argsIgnorePattern: "^_.*?$",
         }],
 
-        "import/order": ["warn", {
+        "import/order": ["off", {
             groups: [
                 "type",
                 "builtin",

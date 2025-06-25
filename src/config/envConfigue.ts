@@ -1,5 +1,5 @@
-const envComfigue = {
+const envConfigue = {
   baseApi: process.env.NEXT_PUBLIC_BASE_API,
 };
 
-export default envComfigue;
+export default envConfigue;

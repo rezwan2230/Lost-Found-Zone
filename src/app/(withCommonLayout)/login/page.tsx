@@ -4,9 +4,10 @@ import FXInput from "@/src/components/form/FXInput";
 import LostFoundForm from "@/src/components/form/LostFoundForm";
 import { zodResolver } from '@hookform/resolvers/zod';
 import loginValidationSchema from "@/src/schemas/login.schema";
+import { FieldValues, SubmitHandler } from "react-hook-form";
 
 const Loginpage = () => {
-  const onSubmit = (data) => {
+  const onSubmit : SubmitHandler<FieldValues> = (data) => {
     console.log(data);
   };
   return (
