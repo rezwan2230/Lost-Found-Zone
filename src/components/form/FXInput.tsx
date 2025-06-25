@@ -18,19 +18,21 @@ const FXInput = ({
   label,
   name,
 }: IProps) => {
-  const { register } = useFormContext();
+  const { register, formState: {errors} } = useFormContext();
+  console.log(errors);
   return (
     <Input
       {...register(name)}
-      errorMessage={"Test"}
-      isInvalid={true}
-      variant={variant}
-      size={size}
-      required={required}
-      type={type}
+      errorMessage={errors[name]? (errors[name].message as string) : ""}
+      isInvalid={!!errors[name]}
       label={label}
+      required={required}
+      size={size}
+      type={type}
+      variant={variant}
     />
   );
 };
 
 export default FXInput;
+

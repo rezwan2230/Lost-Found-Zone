@@ -26,7 +26,7 @@ const LostFoundForm = ({
     formConfig["resolver"] = resolver;
   }
 
-  const methods = useForm();
+  const methods = useForm(formConfig);
 
   const submitHandlar = methods.handleSubmit;
 
@@ -38,3 +38,5 @@ const LostFoundForm = ({
 };
 
 export default LostFoundForm;
+
+
