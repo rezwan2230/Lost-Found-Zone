@@ -8,10 +8,17 @@ import { Button } from "@heroui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
+import { useEffect } from "react";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 
 export default function RegisterPage() {
-  const { mutate: handleUserRegistration } = useUserRegistration();
+  const { mutate: handleUserRegistration, isPending } = useUserRegistration();
+
+  // useEffect(()=>{
+  //   if(isPending){
+  //     //handle loading state
+  //   }
+  // },[isPending])
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     const userData = {
@@ -22,6 +29,10 @@ export default function RegisterPage() {
 
     handleUserRegistration(userData);
   };
+
+  if(isPending){
+    //handle loading state
+  }
 
   return (
     <div className="flex h-[calc(100vh-100px)] flex-col items-center justify-center">
