@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import loginValidationSchema from "@/src/schemas/login.schema";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { useUserLogin } from "@/src/hooks/auth.hook";
+import Loading from "@/src/components/UI/Loading";
 
 const Loginpage = () => {
   const { mutate: handleUserLogin, isPending } = useUserLogin();
@@ -13,31 +14,35 @@ const Loginpage = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     handleUserLogin(data);
   };
+  
   return (
-    <div className="flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center">
-      <h3 className="my-2 text-3xl font-bold">Login with Lost Found Zone</h3>
-      <p className="mb-4">Welcome Back! Let&lsquo;s Get Started</p>
-      <div className="w-[35%]">
-        <LostFoundForm
-          resolver={zodResolver(loginValidationSchema)}
-          onSubmit={onSubmit}
-        >
-          <div className="py-3">
-            <FXInput label="Email" name="email" type="email" />
-          </div>
-          <div className="py-3">
-            <FXInput label="Password" name="password" type="password" />
-          </div>
-
-          <Button
-            className="my-3 w-full rounded-md bg-default-900 font-semibold text-black"
-            type="submit"
+    <>
+      {isPending && <Loading />}
+      <div className="flex h-[calc(100vh-200px)] w-full flex-col items-center justify-center">
+        <h3 className="my-2 text-3xl font-bold">Login with Lost Found Zone</h3>
+        <p className="mb-4">Welcome Back! Let&lsquo;s Get Started</p>
+        <div className="w-[35%]">
+          <LostFoundForm
+            resolver={zodResolver(loginValidationSchema)}
+            onSubmit={onSubmit}
           >
-            Login
-          </Button>
-        </LostFoundForm>
+            <div className="py-3">
+              <FXInput label="Email" name="email" type="email" />
+            </div>
+            <div className="py-3">
+              <FXInput label="Password" name="password" type="password" />
+            </div>
+
+            <Button
+              className="my-3 w-full rounded-md bg-default-900 font-semibold text-black"
+              type="submit"
+            >
+              Login
+            </Button>
+          </LostFoundForm>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
