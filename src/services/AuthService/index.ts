@@ -11,6 +11,7 @@ export const registerUser = async (userData: FieldValues) => {
       (await cookies()).set("access-token", data?.data?.accessToken),
         (await cookies()).set("refresh-token", data?.data?.refreshToken);
     }
+    return data;
 
   } catch (error: any) {
     throw new Error(error);
