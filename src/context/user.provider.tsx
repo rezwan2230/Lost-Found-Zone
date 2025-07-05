@@ -3,11 +3,13 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useContext,
   useEffect,
   useState,
 } from "react";
 import { User } from "../types";
 import { getCurrentUser } from "../services/AuthService";
+import { undefined } from "zod";
 
 const UserContext = createContext<IUserProvider | undefined>(undefined);
 
@@ -20,7 +22,7 @@ interface IUserProvider {
 
 const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleUser = async () => {
     const user = await getCurrentUser();
@@ -29,7 +31,7 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
   };
   useEffect(() => {
     handleUser();
-  }, []);
+  }, [isLoading]);
 
   return (
     <UserContext.Provider value={{ user, setUser, isLoading, setIsLoading }}>
@@ -39,8 +41,12 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
 };
 
 
-const useUser = ()=>{
-    const context
+export const useUser = ()=>{
+    const context = useContext(UserContext);
+    if(context == undefined){
+      throw new Error("useUser must be use within the UserProvider context")
+    }
+    return context;
 }
 
 

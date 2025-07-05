@@ -1,7 +1,7 @@
 "use client";
+import { useUser } from "@/src/context/user.provider";
 import { logout } from "@/src/services/AuthService";
 import { Avatar } from "@heroui/avatar";
-import { Button } from "@heroui/button";
 import {
   Dropdown,
   DropdownItem,
@@ -12,6 +12,11 @@ import { useRouter } from "next/navigation";
 
 const NavbarDropdown = () => {
   const router = useRouter();
+  const {setIsLoading: userLoading} = useUser() ?? {}
+  const handleLogout = ()=>{
+    logout()
+    userLoading?.(true)
+  }
   const handleRouter = (path) => {
     router.push(path);
   };
@@ -49,7 +54,7 @@ const NavbarDropdown = () => {
         </DropdownItem>
 
           <DropdownItem 
-            onClick={() => logout()}
+            onClick={() => handleLogout()}
             key="delete"
             className="text-danger"
             color="danger"

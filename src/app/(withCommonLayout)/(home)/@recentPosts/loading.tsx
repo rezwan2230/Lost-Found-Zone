@@ -15,7 +15,7 @@ const RecentPosts = () => {
         </p>
       </div>
       <div className="my-8 grid justify-center gap-10 sm:grid-cols-1 md:grid-cols-4">
-        {[...Array(9)].map((index) => (
+        {[...Array(9)].map((_,index) => (
           <CardSkeleton key={index}/>
         ))}
       </div>
