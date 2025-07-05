@@ -12,7 +12,7 @@ import { useRouter } from "next/navigation";
 
 const NavbarDropdown = () => {
   const router = useRouter();
-  const {setIsLoading: userLoading} = useUser() ?? {}
+  const {user, setIsLoading: userLoading} = useUser() ?? {}
   const handleLogout = ()=>{
     logout()
     userLoading?.(true)
@@ -24,7 +24,7 @@ const NavbarDropdown = () => {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Avatar name="Rezwan" />
+        <Avatar src={user?.profilePhoto}/>
       </DropdownTrigger>
       <DropdownMenu aria-label="Static Actions">
         <DropdownItem onClick={() => handleRouter("/admin")} key="admin">
