@@ -1,4 +1,5 @@
 "use client";
+import { protectedRoutes } from "@/src/constant";
 import { useUser } from "@/src/context/user.provider";
 import { logout } from "@/src/services/AuthService";
 import { Avatar } from "@heroui/avatar";
@@ -8,14 +9,18 @@ import {
   DropdownMenu,
   DropdownTrigger,
 } from "@heroui/dropdown";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const NavbarDropdown = () => {
   const router = useRouter();
+  const pathName= usePathname()
   const {user, setIsLoading: userLoading} = useUser() ?? {}
   const handleLogout = ()=>{
     logout()
     userLoading?.(true)
+    if(protectedRoutes.some((route)=>pathName.match(route))){
+      router.push("/")
+    }
   }
   const handleRouter = (path) => {
     router.push(path);
