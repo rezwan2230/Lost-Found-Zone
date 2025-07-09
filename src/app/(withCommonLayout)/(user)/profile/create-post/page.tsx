@@ -19,10 +19,14 @@ const CreatePostPage = () => {
     name: "questions",
   });
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
+    const postData = {
+      ...data,
+      questions: data.questions.map((que : {value: string}) => que.value),
+    };
+    console.log(postData);
   };
   const handleFieldAppend = () => {
-    append({ name: "questions" });
+    append({ name: "questions" });  
   };
 
   return (
@@ -38,8 +42,9 @@ const CreatePostPage = () => {
             <Button onClick={() => handleFieldAppend()}>Append</Button>
           </div>
           {fields.map((field, index) => (
-            <div key={field.id}>
-              <FXInput name={`questions.${index}.value`}  label="Questions" />
+            <div key={field.id} className="flex items-center">
+              <FXInput name={`questions.${index}.value`} label="Questions" />
+              <Button onClick={() => remove(index)}>Remove</Button>
             </div>
           ))}
 
