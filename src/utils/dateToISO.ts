@@ -8,7 +8,10 @@ interface Idate {
   year: number;
 }
 const dateToISO = (date: Idate) => {
-    return new Date(`${date.month}-${date.day}-${date.year}`).toISOString();
+  if (!date) {
+    return new Date().toISOString();
+  }
+  return new Date(`${date?.month}-${date?.day}-${date?.year}`).toISOString();
 };
 
 export default dateToISO;

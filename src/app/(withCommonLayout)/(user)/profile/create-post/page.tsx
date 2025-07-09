@@ -1,9 +1,12 @@
 "use client";
 import FxDatePicker from "@/src/components/form/FxDatePicker";
 import FXInput from "@/src/components/form/FXInput";
+import FxSelect from "@/src/components/form/FxSelect";
 import dateToISO from "@/src/utils/dateToISO";
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
+import { allDistict } from "@bangladeshi/bangladesh-address";
+
 import {
   FieldValues,
   FormProvider,
@@ -24,13 +27,20 @@ const CreatePostPage = () => {
     const postData = {
       ...data,
       questions: data.questions.map((que: { value: string }) => que.value),
-      dateFound : dateToISO(data.dateFound)
+      dateFound: dateToISO(data.dateFound),
     };
     console.log(postData);
   };
   const handleFieldAppend = () => {
     append({ name: "questions" });
   };
+
+  const cityOptions = allDistict()
+    .sort()
+    .map((city: string) => ({
+      key: city,
+      label: city,
+    }));
 
   return (
     <div>
@@ -53,7 +63,7 @@ const CreatePostPage = () => {
                 <FXInput label="Location" name="location" />
               </div>
               <div className="min-w-fit flex-1">
-                <FXInput label="City" name="city" />
+                <FxSelect label="City" name="city" options={cityOptions} />
               </div>
             </div>
 
