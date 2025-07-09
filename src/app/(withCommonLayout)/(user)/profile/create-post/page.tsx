@@ -1,6 +1,7 @@
 "use client";
 import FxDatePicker from "@/src/components/form/FxDatePicker";
 import FXInput from "@/src/components/form/FXInput";
+import dateToISO from "@/src/utils/dateToISO";
 import { Button } from "@heroui/button";
 import { Divider } from "@heroui/divider";
 import {
@@ -23,6 +24,7 @@ const CreatePostPage = () => {
     const postData = {
       ...data,
       questions: data.questions.map((que: { value: string }) => que.value),
+      dateFound : dateToISO(data.dateFound)
     };
     console.log(postData);
   };
