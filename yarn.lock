@@ -223,6 +223,15 @@
     "@heroui/system-rsc" "2.3.13"
     "@react-types/shared" "3.29.0"
 
+"@heroui/divider@^2.2.15":
+  version "2.2.15"
+  resolved "https://registry.yarnpkg.com/@heroui/divider/-/divider-2.2.15.tgz#bb73c76e70786ca580af0323b00c0636790eb9da"
+  integrity sha512-RXtqRqZ78fDRhiKzY8qXOIDExfMf3YLnwWSv5ePcgG2GMQJiefd0WGV3RP6Jr2yaShFq85gpUKIoZzai1vsI+g==
+  dependencies:
+    "@heroui/react-rsc-utils" "2.1.8"
+    "@heroui/system-rsc" "2.3.15"
+    "@react-types/shared" "3.30.0"
+
 "@heroui/dom-animation@2.1.8":
   version "2.1.8"
   resolved "https://registry.npmjs.org/@heroui/dom-animation/-/dom-animation-2.1.8.tgz"
