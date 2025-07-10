@@ -1,6 +1,5 @@
 import { IInput } from "@/src/types";
 import { Select, SelectItem } from "@heroui/select";
-import React from "react";
 import { useFormContext } from "react-hook-form";
 
 interface IProps extends IInput {
@@ -10,7 +9,7 @@ interface IProps extends IInput {
   }[];
 }
 
-const FxSelect = ({ options, name, label, variant = "bordered" }: IProps) => {
+const FxSelect = ({ options, name, label, variant = "bordered", disabled }: IProps) => {
   const {
     register,
     formState: { errors },
@@ -21,6 +20,7 @@ const FxSelect = ({ options, name, label, variant = "bordered" }: IProps) => {
       className="min-w-full sm:min-w-[225px]"
       variant={variant}
       label={label}
+      isDisabled={disabled}
     >
       {options.map((option) => (
         <SelectItem key={option.key}>{option.label}</SelectItem>
@@ -30,3 +30,5 @@ const FxSelect = ({ options, name, label, variant = "bordered" }: IProps) => {
 };
 
 export default FxSelect;
+
+
