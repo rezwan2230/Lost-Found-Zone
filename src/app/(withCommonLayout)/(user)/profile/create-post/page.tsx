@@ -16,11 +16,14 @@ import {
 } from "react-hook-form";
 import { useGetCategories } from "@/src/hooks/cotegories.hook";
 import { ChangeEvent, useState } from "react";
-import { File } from "node:buffer";
+import FXTextarea from "@/src/components/form/FxTextArea";
+import { AddIcon, TrashIcon } from "@/src/assets/icnons";
 
 const CreatePostPage = () => {
   const [imageFiles, setImageFiles] = useState<File[] | []>([]);
+  const [imagePreviews, setImagePreviews] = useState<string[] | []>([]);
 
+  console.log(imagePreviews);
   const {
     data: categoriesData,
     isLoading: categoryLoading,
@@ -66,6 +69,13 @@ const CreatePostPage = () => {
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files![0];
     setImageFiles((prev) => [...prev, file]);
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreviews((prev) => [...prev, reader.result as string]);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -102,35 +112,70 @@ const CreatePostPage = () => {
                   disabled={!categorySuccess}
                 />
               </div>
+
               <div className="min-w-fit flex-1">
                 <label
-                  className="bg-gray-500 w-full block h-full rounded-md"
+                  className="flex h-14 w-full cursor-pointer items-center justify-center rounded-xl border-2 border-default-200 text-default-500 shadow-sm transition-all duration-100 hover:border-default-400"
                   htmlFor="image"
                 >
-                  Upload Images
+                  Upload image
                 </label>
                 <input
-                  className="hidden"
                   multiple
-                  type="file"
+                  className="hidden"
                   id="image"
+                  type="file"
                   onChange={(e) => handleImageChange(e)}
                 />
               </div>
             </div>
 
-            <Divider className="my-5" />
-            <div className="flex justify-between items-center">
-              <h1 className="text-xl">Owner verificatiaons questions</h1>
-              <Button onClick={() => handleFieldAppend()}>Append</Button>
+            {imagePreviews.length > 0 && (
+              <div className="flex gap-5 my-5 flex-wrap">
+                {imagePreviews.map((imageDataUrl) => (
+                  <div
+                    key={imageDataUrl}
+                    className="relative size-48 rounded-xl border-2 border-dashed border-default-300 p-2"
+                  >
+                    <img
+                      alt="item"
+                      className="h-full w-full object-cover object-center rounded-md"
+                      src={imageDataUrl}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="flex flex-wrap-reverse gap-2 py-2">
+              <div className="min-w-fit flex-1">
+                <FXTextarea label="Description" name="description" />
+              </div>
             </div>
 
-            {fields.map((field, index) => (
-              <div key={field.id} className="flex items-center">
-                <FXInput name={`questions.${index}.value`} label="Questions" />
-                <Button onClick={() => remove(index)}>Remove</Button>
-              </div>
-            ))}
+            <Divider className="my-5" />
+
+            <div className="flex justify-between items-center mb-5">
+              <h1 className="text-xl">Owner verification questions</h1>
+              <Button isIconOnly onClick={() => handleFieldAppend()}>
+                <AddIcon />
+              </Button>
+            </div>
+
+            <div className="space-y-5">
+              {fields.map((field, index) => (
+                <div key={field.id} className="flex gap-2 items-center">
+                  <FXInput
+                    name={`questions.${index}.value`}
+                    label="Questions"
+                  />
+                  <Button isIconOnly
+                    className="h-14 w-16" onClick={() => remove(index)}>
+                    <TrashIcon/>
+                  </Button>
+                </div>
+              ))}
+            </div>
 
             <Divider className="my-5" />
 

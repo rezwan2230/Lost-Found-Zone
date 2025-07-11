@@ -357,7 +357,19 @@
     "@react-stately/menu" "3.9.3"
     "@react-types/menu" "3.10.0"
 
-"@heroui/form@2.1.18", "@heroui/form@^2.1.18":
+"@heroui/form@2.1.21":
+  version "2.1.21"
+  resolved "https://registry.yarnpkg.com/@heroui/form/-/form-2.1.21.tgz#89c29816182a7187caa1d9dbb6ca0986ee1f735c"
+  integrity sha512-LS3sNgrSTXUq8KDoiA8DLyMmVuMRBDyzk9TKLTml6rms2yLCXtN/7BaP1QVqzm7QDXD6GUGVVae5yBCJYNZwqg==
+  dependencies:
+    "@heroui/system" "2.4.18"
+    "@heroui/theme" "2.4.17"
+    "@react-aria/utils" "3.29.1"
+    "@react-stately/form" "3.1.5"
+    "@react-types/form" "3.7.13"
+    "@react-types/shared" "3.30.0"
+
+"@heroui/form@^2.1.18":
   version "2.1.18"
   resolved "https://registry.yarnpkg.com/@heroui/form/-/form-2.1.18.tgz#88de5605160d0bd831568f35909729fe24b41936"
   integrity sha512-cBlliX6uiIUHDMF/bf5u1JhaA1+ddJHfmDPGfdl25c0mSWbyJqWJ0f1N2KZfrOf8kBkXdWCDXgK5sr3h9n22xg==
@@ -370,18 +382,6 @@
     "@react-stately/form" "3.1.3"
     "@react-types/form" "3.7.11"
     "@react-types/shared" "3.29.0"
-
-"@heroui/form@2.1.21":
-  version "2.1.21"
-  resolved "https://registry.yarnpkg.com/@heroui/form/-/form-2.1.21.tgz#89c29816182a7187caa1d9dbb6ca0986ee1f735c"
-  integrity sha512-LS3sNgrSTXUq8KDoiA8DLyMmVuMRBDyzk9TKLTml6rms2yLCXtN/7BaP1QVqzm7QDXD6GUGVVae5yBCJYNZwqg==
-  dependencies:
-    "@heroui/system" "2.4.18"
-    "@heroui/theme" "2.4.17"
-    "@react-aria/utils" "3.29.1"
-    "@react-stately/form" "3.1.5"
-    "@react-types/form" "3.7.13"
-    "@react-types/shared" "3.30.0"
 
 "@heroui/framer-utils@2.1.15":
   version "2.1.15"
@@ -409,23 +409,23 @@
     "@heroui/shared-utils" "2.1.9"
     "@heroui/use-image" "2.1.9"
 
-"@heroui/input@2.4.19":
-  version "2.4.19"
-  resolved "https://registry.npmjs.org/@heroui/input/-/input-2.4.19.tgz"
-  integrity sha512-hKkdMNYHoHpwW/wxdbcWW6M9lLzSTQkSC1FwSfmx3Ug399bX9aLbwNj6R7oOpqqilZjbdnVOWDTzQ9B1vu1Sqg==
+"@heroui/input@^2.4.22":
+  version "2.4.22"
+  resolved "https://registry.yarnpkg.com/@heroui/input/-/input-2.4.22.tgz#4d4fc5f618951cd5f23c8821232975f3a907ca15"
+  integrity sha512-Mq4A6UwWqD3faC85sniFhFJJ1nq3Z64GzgVyAVPXCuRaSy4Y9rC4sh3EZHdap5s35w4Nde/H5ASZAtFhIUfOHg==
   dependencies:
-    "@heroui/form" "2.1.18"
-    "@heroui/react-utils" "2.1.10"
-    "@heroui/shared-icons" "2.1.7"
+    "@heroui/form" "2.1.21"
+    "@heroui/react-utils" "2.1.11"
+    "@heroui/shared-icons" "2.1.9"
     "@heroui/shared-utils" "2.1.9"
     "@heroui/use-safe-layout-effect" "2.1.7"
-    "@react-aria/focus" "3.20.2"
-    "@react-aria/interactions" "3.25.0"
-    "@react-aria/textfield" "3.17.2"
-    "@react-aria/utils" "3.28.2"
-    "@react-stately/utils" "3.10.6"
-    "@react-types/shared" "3.29.0"
-    "@react-types/textfield" "3.12.1"
+    "@react-aria/focus" "3.20.5"
+    "@react-aria/interactions" "3.25.3"
+    "@react-aria/textfield" "3.17.5"
+    "@react-aria/utils" "3.29.1"
+    "@react-stately/utils" "3.10.7"
+    "@react-types/shared" "3.30.0"
+    "@react-types/textfield" "3.12.3"
     react-textarea-autosize "^8.5.3"
 
 "@heroui/kbd@2.2.15":
@@ -1370,17 +1370,6 @@
     "@react-types/shared" "^3.30.0"
     "@swc/helpers" "^0.5.0"
 
-"@react-aria/form@^3.0.15":
-  version "3.0.15"
-  resolved "https://registry.npmjs.org/@react-aria/form/-/form-3.0.15.tgz"
-  integrity sha512-kk8AnLz+EOgnn3sTaXYmtw+YzVDc1of/+xAkuOupQi6zQFnNRjc99JlDbKHoUZ39urMl+8lsp/1b9VPPhNrBNw==
-  dependencies:
-    "@react-aria/interactions" "^3.25.0"
-    "@react-aria/utils" "^3.28.2"
-    "@react-stately/form" "^3.1.3"
-    "@react-types/shared" "^3.29.0"
-    "@swc/helpers" "^0.5.0"
-
 "@react-aria/i18n@3.12.10", "@react-aria/i18n@^3.12.10":
   version "3.12.10"
   resolved "https://registry.yarnpkg.com/@react-aria/i18n/-/i18n-3.12.10.tgz#6799c3db132461c1a3e13a269dfbb09321496e6f"
@@ -1634,19 +1623,19 @@
     "@react-types/switch" "^3.5.10"
     "@swc/helpers" "^0.5.0"
 
-"@react-aria/textfield@3.17.2":
-  version "3.17.2"
-  resolved "https://registry.npmjs.org/@react-aria/textfield/-/textfield-3.17.2.tgz"
-  integrity sha512-4KINB0HueYUHUgvi/ThTP27hu4Mv5ujG55pH3dmSRD4Olu/MRy1m/Psq72o8LTf4bTOM9ZP1rKccUg6xfaMidA==
+"@react-aria/textfield@3.17.5":
+  version "3.17.5"
+  resolved "https://registry.yarnpkg.com/@react-aria/textfield/-/textfield-3.17.5.tgz#e05140d535cd2dfcb409bd2c36992b2302a6de6d"
+  integrity sha512-HFdvqd3Mdp6WP7uYAWD64gRrL1D4Khi+Fm3dIHBhm1ANV0QjYkphJm4DYNDq/MXCZF46+CZNiOWEbL/aeviykA==
   dependencies:
-    "@react-aria/form" "^3.0.15"
-    "@react-aria/interactions" "^3.25.0"
-    "@react-aria/label" "^3.7.17"
-    "@react-aria/utils" "^3.28.2"
-    "@react-stately/form" "^3.1.3"
-    "@react-stately/utils" "^3.10.6"
-    "@react-types/shared" "^3.29.0"
-    "@react-types/textfield" "^3.12.1"
+    "@react-aria/form" "^3.0.18"
+    "@react-aria/interactions" "^3.25.3"
+    "@react-aria/label" "^3.7.19"
+    "@react-aria/utils" "^3.29.1"
+    "@react-stately/form" "^3.1.5"
+    "@react-stately/utils" "^3.10.7"
+    "@react-types/shared" "^3.30.0"
+    "@react-types/textfield" "^3.12.3"
     "@swc/helpers" "^0.5.0"
 
 "@react-aria/toggle@^3.11.2":
@@ -1783,7 +1772,7 @@
   dependencies:
     "@swc/helpers" "^0.5.0"
 
-"@react-stately/form@3.1.3", "@react-stately/form@^3.1.3":
+"@react-stately/form@3.1.3":
   version "3.1.3"
   resolved "https://registry.npmjs.org/@react-stately/form/-/form-3.1.3.tgz"
   integrity sha512-Jisgm0facSS3sAzHfSgshoCo3LxfO0wmQj98MOBCGXyVL+MSwx2ilb38eXIyBCzHJzJnPRTLaK/E4T49aph47A==
@@ -2089,12 +2078,12 @@
   dependencies:
     "@react-types/shared" "^3.29.0"
 
-"@react-types/textfield@3.12.1", "@react-types/textfield@^3.12.1":
-  version "3.12.1"
-  resolved "https://registry.npmjs.org/@react-types/textfield/-/textfield-3.12.1.tgz"
-  integrity sha512-6YTAMCKjEGuXg0A4bZA77j5QJ1a6yFviMUWsCIL6Dxq5K3TklzVsbAduSbHomPPuvkNTBSW4+TUJrVSnoTjMNA==
+"@react-types/textfield@3.12.3", "@react-types/textfield@^3.12.3":
+  version "3.12.3"
+  resolved "https://registry.yarnpkg.com/@react-types/textfield/-/textfield-3.12.3.tgz#24653795d343403a220d6b5b82045ee43f823eb2"
+  integrity sha512-72tt2GJSyVFPPqZLrlfWqVn5KRnWzXsXCZ3IDawcGunl4pu+2E24jd0CWN9kOi0ETO65flj2sljeytxKytXnlA==
   dependencies:
-    "@react-types/shared" "^3.29.0"
+    "@react-types/shared" "^3.30.0"
 
 "@react-types/tooltip@3.4.16", "@react-types/tooltip@^3.4.16":
   version "3.4.16"
