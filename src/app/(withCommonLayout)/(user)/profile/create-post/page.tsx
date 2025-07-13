@@ -18,12 +18,14 @@ import { useGetCategories } from "@/src/hooks/cotegories.hook";
 import { ChangeEvent, useState } from "react";
 import FXTextarea from "@/src/components/form/FxTextArea";
 import { AddIcon, TrashIcon } from "@/src/assets/icnons";
+import { useUser } from "@/src/context/user.provider";
+
 
 const CreatePostPage = () => {
   const [imageFiles, setImageFiles] = useState<File[] | []>([]);
   const [imagePreviews, setImagePreviews] = useState<string[] | []>([]);
+  const { user } = useUser();
 
-  console.log(imagePreviews);
   const {
     data: categoriesData,
     isLoading: categoryLoading,
@@ -42,19 +44,26 @@ const CreatePostPage = () => {
 
   const methods = useForm();
   const { control, handleSubmit } = methods;
-
   const { fields, append, remove } = useFieldArray({
     control,
     name: "questions",
   });
+
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const formData = new FormData();
     const postData = {
       ...data,
       questions: data.questions.map((que: { value: string }) => que.value),
       dateFound: dateToISO(data.dateFound),
+      user: user!._id,
     };
-    console.log(postData);
+    formData.append("data", JSON.stringify(postData));
+
+    for (let image of imageFiles) {
+      formData.append("itemImages", image);
+    }
   };
+
   const handleFieldAppend = () => {
     append({ name: "questions" });
   };
@@ -169,9 +178,12 @@ const CreatePostPage = () => {
                     name={`questions.${index}.value`}
                     label="Questions"
                   />
-                  <Button isIconOnly
-                    className="h-14 w-16" onClick={() => remove(index)}>
-                    <TrashIcon/>
+                  <Button
+                    isIconOnly
+                    className="h-14 w-16"
+                    onClick={() => remove(index)}
+                  >
+                    <TrashIcon />
                   </Button>
                 </div>
               ))}

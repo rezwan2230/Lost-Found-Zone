@@ -9,7 +9,6 @@ import {
 } from "react";
 import { User } from "../types";
 import { getCurrentUser } from "../services/AuthService";
-import { undefined } from "zod";
 
 const UserContext = createContext<IUserProvider | undefined>(undefined);
 
