@@ -10,13 +10,14 @@ import Loading from "@/src/components/UI/Loading";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useUser } from "@/src/context/user.provider";
+import Link from "next/link";
 
 const Loginpage = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const redirect = searchParams.get("redirect");
 
-  const {setIsLoading: userLoading} = useUser() ?? {}
+  const { setIsLoading: userLoading } = useUser() ?? {};
 
   const { mutate: handleUserLogin, isPending, isSuccess } = useUserLogin();
 
@@ -68,6 +69,9 @@ const Loginpage = () => {
               Login
             </Button>
           </LostFoundForm>
+          <div className="text-center">
+            Don&lsquo;t have account ? <Link href={"/register"}><span className="underline">Register</span></Link>
+          </div>
         </div>
       </div>
     </>

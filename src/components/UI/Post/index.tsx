@@ -5,9 +5,11 @@ import Link from "next/link";
 import { useUser } from "@/src/context/user.provider";
 import { IPost, User } from "@/src/types";
 import { Avatar } from "@heroui/avatar";
+
 import { Button } from "@heroui/button";
 import ImageGallery from "./ImageGallery";
 import ClaimRequestModal from "../../modals/ClaimRequestModal";
+import AuthenticationModal from "../../modals/AuthenticationModal";
 
 interface IProps {
   post: IPost;
@@ -65,7 +67,17 @@ export default function Post({ post }: IProps) {
         <ImageGallery images={images} />
 
         <div className="mt-4 flex gap-5">
-         <ClaimRequestModal id={_id} questions={questions}/>
+          {email !== loggedInUser?.email && (
+            <>
+              {loggedInUser?.email && (
+                <ClaimRequestModal id={_id} questions={questions} />
+              )}
+              {!loggedInUser?.email && <AuthenticationModal id={_id} />}
+            </>
+          )}
+
+          {email !== loggedInUser?.email && <div className="w-[1px] bg-default-200"/>}
+
           <Button variant="light" className="flex-1">
             Share
           </Button>

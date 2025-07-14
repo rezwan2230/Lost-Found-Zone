@@ -680,6 +680,11 @@
   resolved "https://registry.npmjs.org/@heroui/shared-utils/-/shared-utils-2.1.9.tgz"
   integrity sha512-mM/Ep914cYMbw3T/b6+6loYhuNfzDaph76mzw/oIS05gw1Dhp9luCziSiIhqDGgzYck2d74oWTZlahyCsxf47w==
 
+"@heroui/shared-utils@^2.1.9":
+  version "2.1.9"
+  resolved "https://registry.yarnpkg.com/@heroui/shared-utils/-/shared-utils-2.1.9.tgz#bcfc019250cb1d1c376f4e09ef0f3b8e0cb0ee67"
+  integrity sha512-mM/Ep914cYMbw3T/b6+6loYhuNfzDaph76mzw/oIS05gw1Dhp9luCziSiIhqDGgzYck2d74oWTZlahyCsxf47w==
+
 "@heroui/skeleton@^2.2.12":
   version "2.2.12"
   resolved "https://registry.yarnpkg.com/@heroui/skeleton/-/skeleton-2.2.12.tgz#8ff50e4b5e3b20724ea6a5991e5824b3edd912df"
@@ -4076,6 +4081,11 @@ lru-cache@^10.2.0:
   version "10.4.3"
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz"
   integrity sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
+
+lucide@^0.525.0:
+  version "0.525.0"
+  resolved "https://registry.yarnpkg.com/lucide/-/lucide-0.525.0.tgz#9afb752d6f6276f46487b9ca08f9fcc6aef757cb"
+  integrity sha512-sfehWlaE/7NVkcEQ4T9JD3eID8RNMIGJBBUq9wF3UFiJIrcMKRbU3g1KGfDk4svcW7yw8BtDLXaXo02scDtUYQ==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"

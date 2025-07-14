@@ -14,7 +14,6 @@ interface IProps {
 }
 
 const ImageGallery = ({ images }: IProps) => {
-  console.log(images.length);
   return (
     <LightGallery
       elementClassNames={`mt-2 gap-2 grid place-items-center ${images.length == 1 ? "grid-cols-1" : "grid-cols-2"}`}

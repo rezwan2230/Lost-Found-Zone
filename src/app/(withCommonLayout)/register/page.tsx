@@ -77,7 +77,7 @@ export default function RegisterPage() {
           </Button>
         </LostFoundForm>
         <div className="text-center">
-          Already have an account ? <Link href={"/login"}>Login</Link>
+          Already have an account ? <Link href={"/login"}><span className="underline">Login</span></Link>
         </div>
       </div>
     </div>
