@@ -6,6 +6,7 @@ import { useUser } from "@/src/context/user.provider";
 import { IPost, User } from "@/src/types";
 import { Avatar } from "@heroui/avatar";
 import { Button } from "@heroui/button";
+import ImageGallery from "./ImageGallery";
 
 interface IProps {
   post: IPost;
@@ -47,17 +48,20 @@ export default function Post({ post }: IProps) {
                 <h1 className="cursor-pointer text-2xl">{title}</h1>
               </Link>
               <p className="flex items-center gap-1 text-xs">
+                {/* Found on: <Calendar width={14} /> */}
                 {format(new Date(dateFound), "dd MMM, yyyy")}
               </p>
             </div>
             <div>
               <p className="flex items-center gap-1">
+                {/* <MapPin width={18} /> */}
                 {location}, {city}
               </p>
             </div>
           </div>
           <p>{description}</p>
         </div>
+        <ImageGallery images={images} />
 
         <div className="mt-4 flex gap-5">
           <Button variant="light" className="flex-1">

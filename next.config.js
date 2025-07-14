@@ -5,6 +5,16 @@ const nextConfig = {
       bodySizeLimit: "5mb",
     },
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+        port: "",
+        search: "",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
