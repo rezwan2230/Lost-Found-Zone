@@ -7,6 +7,7 @@ import { IPost, User } from "@/src/types";
 import { Avatar } from "@heroui/avatar";
 import { Button } from "@heroui/button";
 import ImageGallery from "./ImageGallery";
+import ClaimRequestModal from "../../modals/ClaimRequestModal";
 
 interface IProps {
   post: IPost;
@@ -64,9 +65,7 @@ export default function Post({ post }: IProps) {
         <ImageGallery images={images} />
 
         <div className="mt-4 flex gap-5">
-          <Button variant="light" className="flex-1">
-            Claim Request
-          </Button>
+         <ClaimRequestModal/>
           <Button variant="light" className="flex-1">
             Share
           </Button>
