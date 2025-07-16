@@ -10,6 +10,7 @@ import { Button } from "@heroui/button";
 import ImageGallery from "./ImageGallery";
 import ClaimRequestModal from "../../modals/ClaimRequestModal";
 import AuthenticationModal from "../../modals/AuthenticationModal";
+import { Calendar, MapPin } from "lucide-react";
 
 interface IProps {
   post: IPost;
@@ -51,13 +52,13 @@ export default function Post({ post }: IProps) {
                 <h1 className="cursor-pointer text-2xl">{title}</h1>
               </Link>
               <p className="flex items-center gap-1 text-xs">
-                {/* Found on: <Calendar width={14} /> */}
+                Found on: <Calendar width={14} />
                 {format(new Date(dateFound), "dd MMM, yyyy")}
               </p>
             </div>
             <div>
               <p className="flex items-center gap-1">
-                {/* <MapPin width={18} /> */}
+                <MapPin width={18} />
                 {location}, {city}
               </p>
             </div>
@@ -86,3 +87,4 @@ export default function Post({ post }: IProps) {
     </div>
   );
 }
+

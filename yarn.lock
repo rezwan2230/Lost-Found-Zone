@@ -675,14 +675,9 @@
   resolved "https://registry.yarnpkg.com/@heroui/shared-icons/-/shared-icons-2.1.9.tgz#ea237924219219e5a96c7219f9f5ea0850a05d25"
   integrity sha512-CuKB8bKtRrZzxhU0dpaM9ecJWbs3ZfgWIQG0neYcbEQse0rS83VsKLokh+nmL8fNl69gq1ykT+HYsURnDGyrMw==
 
-"@heroui/shared-utils@2.1.9":
+"@heroui/shared-utils@2.1.9", "@heroui/shared-utils@^2.1.9":
   version "2.1.9"
   resolved "https://registry.npmjs.org/@heroui/shared-utils/-/shared-utils-2.1.9.tgz"
-  integrity sha512-mM/Ep914cYMbw3T/b6+6loYhuNfzDaph76mzw/oIS05gw1Dhp9luCziSiIhqDGgzYck2d74oWTZlahyCsxf47w==
-
-"@heroui/shared-utils@^2.1.9":
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/@heroui/shared-utils/-/shared-utils-2.1.9.tgz#bcfc019250cb1d1c376f4e09ef0f3b8e0cb0ee67"
   integrity sha512-mM/Ep914cYMbw3T/b6+6loYhuNfzDaph76mzw/oIS05gw1Dhp9luCziSiIhqDGgzYck2d74oWTZlahyCsxf47w==
 
 "@heroui/skeleton@^2.2.12":
@@ -4081,6 +4076,11 @@ lru-cache@^10.2.0:
   version "10.4.3"
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz"
   integrity sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
+
+lucide-react@^0.525.0:
+  version "0.525.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.525.0.tgz#5f7bcecd65e4f9b2b5b6b5d295e3376df032d5e3"
+  integrity sha512-Tm1txJ2OkymCGkvwoHt33Y2JpN5xucVq1slHcgE6Lk0WjDfjgKWor5CdVER8U6DvcfMwh4M8XxmpTiyzfmfDYQ==
 
 lucide@^0.525.0:
   version "0.525.0"
