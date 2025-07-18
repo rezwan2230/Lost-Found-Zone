@@ -49,8 +49,27 @@ export const getCurrentUser = async () => {
       mobileNumber: decodedToken.mobileNumber,
       role: decodedToken.role,
       status: decodedToken.status,
-      profilePhoto : decodedToken.profilePhoto
+      profilePhoto: decodedToken.profilePhoto,
     };
   }
   return decodedToken;
+};
+
+export const getNewAccessToken = async () => {
+  try {
+    const refrestToken = (await cookies()).get("refresh-token")?.value;
+
+    const res = await axiosInstance({
+      url: "/auth/refresh-token",
+      method: "POST",
+      withCredentials: true,
+      headers: {
+        cookies: `refreshToken=${refrestToken}`,
+      },
+    });
+
+    return res.data; 
+  } catch (error: any) {
+    throw new Error("Failed to get new access token");
+  }
 };
